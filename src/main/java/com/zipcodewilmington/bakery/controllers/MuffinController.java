@@ -17,27 +17,27 @@ public class MuffinController {
         this.service = service;
     }
 
-    @GetMapping(value = "/muffin")
+    @GetMapping(value = "/muffins")
     public ResponseEntity<Iterable<Muffin>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/muffin/{id}")
+    @GetMapping(value = "/muffins/{id}")
     public ResponseEntity<Muffin> show(@PathVariable Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/muffin")
+    @PostMapping(value = "/muffins")
     public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/muffin/{id}")
+    @PutMapping(value = "/muffins/{id}")
     public ResponseEntity<Muffin> update(@PathVariable Long id, @RequestBody Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/muffin/{id}")
+    @DeleteMapping(value = "/muffins/{id}")
     public ResponseEntity<Boolean> destroy(@PathVariable Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }
